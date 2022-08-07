@@ -6,7 +6,7 @@
 {{ if ne (len $pinned) 0}}
 {{ else }}
 {{ $section = where .Site.RegularPages "Section" "in" (slice "post") }}
-{{ $section_title = "Popular posts" }}
+{{ $section_title = "Recent posts" }}
 {{ end }}
 <div>
   <div class="position-relative">
