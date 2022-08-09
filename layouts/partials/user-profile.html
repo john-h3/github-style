@@ -153,11 +153,11 @@
           {{ if .Site.Params.links }}
           {{ range .Site.Params.links }}
           {{ if .icon }}
-          <a style="margin: 0 10px 10px 0;" href="{{ .href }}">
+          <a style="margin: 0 10px 10px 0;" target="_blank" href="{{ .href }}">
             <img alt="@{{ .title }}" width="32" height="32" src="{{ .icon }}" class="avatar">
           </a>
           {{ else }}
-          <a style="margin: 0 10px 10px 0;" href="{{ .href }}">
+          <a style="margin: 0 10px 10px 0;" target="_blank" href="{{ .href }}">
             <img alt="@{{ .title }}" width="32" height="32" src='{{ "images/link.png" | absURL }}' class="avatar">
           </a>
           {{ end }}
@@ -165,8 +165,14 @@
           {{ end }}
 
           {{ if .Site.Params.rss }}
-          <a style="margin: 0 10px 10px 0;" href="{{ "index.xml" | absURL }}">
+          <a style="margin: 0 10px 10px 0;" target="_blank" href="{{ "index.xml" | absURL }}">
             <img alt="@rss" width="32" height="32" src="{{ "images/rss.png" | absURL }}" class="avatar">
+          </a>
+          {{ end }}
+
+          {{ if gt (len .Site.Params.yuque) 0 }}
+          <a style="margin: 0 10px 10px 0;" target="_blank" href="{{ .Site.Params.yuque }}">
+            <img alt="@rss" width="74" height="32" src="{{ "images/yuque2.svg" | absURL }}" class="avatar">
           </a>
           {{ end }}
          </div>
