@@ -169,11 +169,13 @@
             <img alt="@rss" width="32" height="32" src="{{ "images/rss.png" | absURL }}" class="avatar">
           </a>
           {{ end }}
-
+          
+          {{ if .Site.Params.yuque }}
           {{ if gt (len .Site.Params.yuque) 0 }}
           <a style="margin: 0 10px 10px 0;" target="_blank" href="{{ .Site.Params.yuque }}">
             <img alt="@rss" width="74" height="32" src="{{ "images/yuque2.svg" | absURL }}" class="avatar">
           </a>
+          {{ end }}
           {{ end }}
          </div>
         </div>
