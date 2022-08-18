@@ -1,0 +1,5 @@
+{{ if .Site.Params.enableGiscus }}
+<div id="giscus" class="container-lg p-3 giscus giscus-frame"></div>
+
+{{ .Site.Params.Giscus.script | safeHTML}}
+{{ end }}

@@ -24,6 +24,20 @@ function setTheme(style) {
   });
   document.documentElement.setAttribute('data-color-mode', style);
   localStorage.setItem('data-color-mode', style);
+  const iconElement = document.getElementById('github-icon');
+  console.log(style)
+  if (style == 'dark') {
+    if (iconElement) {
+      iconElement.setAttribute('class', 'octicon');
+      iconElement.setAttribute('color', '#f0f6fc');
+    }
+  }
+  else {
+    if (iconElement) {
+      iconElement.removeAttribute('color');
+      iconElement.removeAttribute('class');
+    }
+  }
 }
 
 function currentTheme() {
