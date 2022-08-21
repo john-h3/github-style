@@ -100,3 +100,18 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
 {{ end }}
+
+{{ if .Site.Params.enableGiscus }}
+<script>
+function handleMessage(event) {
+  if (event.origin !== 'https://giscus.app') return;
+  if (!(typeof event.data === 'object' && event.data.giscus)) return;
+  window.removeEventListener('message', handleMessage);
+  // 接收到事件表示 iframe 加载完成
+  // 立即同步主题
+  sendMessage({setConfig: {theme: currentTheme()}})
+}
+
+  window.addEventListener('message', handleMessage);
+</script>
+{{ end }}

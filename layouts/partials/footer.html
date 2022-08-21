@@ -15,14 +15,3 @@
 
 
 </div>
-
-<script>
-  syncColorScheme = () => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme("dark")
-    } else {
-      setTheme("light")
-    }
-  }
-  setInterval(syncColorScheme, 100)
-</script>
