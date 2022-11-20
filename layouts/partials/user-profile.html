@@ -177,6 +177,14 @@
           </a>
           {{ end }}
           {{ end }}
+
+          {{ if .Site.Params.notion }}
+          {{ if gt (len .Site.Params.notion) 0 }}
+          <a style="margin: 0 10px 10px 0;" target="_blank" href="{{ .Site.Params.notion }}">
+            <img id="notion-img" alt="@rss" height="32" src="{{ "images/notion_light.svg" | absURL }}" class="avatar">
+          </a>
+          {{ end }}
+          {{ end }}
          </div>
         </div>
       </div>

@@ -24,6 +24,10 @@ function setTheme(style) {
   });
   document.documentElement.setAttribute('data-color-mode', style);
   localStorage.setItem('data-color-mode', style);
+  const notion = document.getElementById('notion-img')
+  if (notion != null) {
+    notion.src = '/images/notion_'+style+'.svg'
+  }
   sendMessage({setConfig: {theme: style}})
 }
 
