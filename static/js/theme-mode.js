@@ -24,10 +24,18 @@ function setTheme(style) {
   });
   document.documentElement.setAttribute('data-color-mode', style);
   localStorage.setItem('data-color-mode', style);
-  const notion = document.getElementById('notion-img')
-  if (notion != null) {
-    notion.src = '/images/notion_'+style+'.svg'
-  }
+  
+  let count = 0
+  i = setInterval(() => {
+    const notion = document.getElementById('notion-img')
+    if (notion != null) {
+      notion.src = '/images/notion_'+style+'.svg'
+      clearInterval(i)
+    } else if (count++ == 10) {
+      clearInterval(i)
+    }
+  }, 10)
+
   sendMessage({setConfig: {theme: style}})
 }
 
